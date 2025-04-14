@@ -22,6 +22,7 @@ By building this framework, I aimed to accomplish these goals:
 ## Inspiration & Credit
 
 This project is heavily inspired by the design of [fastai](https://github.com/fastai/fastai), particularly its modular training loop, flexible callback system, and the use of exceptions to control training flow. A significant influence on this project was [Lesson 16](https://course.fast.ai/Lessons/lesson16.html) of the fast.ai course, in which Jeremy Howard demonstrates the process of building a simplified training framework. 
+
 MiniLearn builds on these ideas and takes them further by creating a more complete, reusable framwork. While many design patterns reflect the fastai approach, all components in this project have been implemented from the ground up with the goal of reinforcing my understanding of the internals of deep learning.
 
 ---
