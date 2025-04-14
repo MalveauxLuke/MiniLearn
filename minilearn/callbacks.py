@@ -51,12 +51,14 @@ class ProgressCB():
 
     Args:
         plot (bool): Whether to plot training loss after fit.
+        displayed_plot (bool): Flag that displays whether plot was displayed or not. Used for plotting loss if fit is cancelled
     """
     order = MetricsCB.order + 1 # Ensure runs after metrics
 
     def __init__(self, plot=False):
         self.plot = plot
         self.losses = []
+        self.displayed_plot = False
 
     def before_fit(self, learn):
         """Reset loss tracker  at the beginning of training"""
@@ -81,6 +83,19 @@ class ProgressCB():
     def after_fit(self, learn):
         """Display loss plot if enabled after training ends."""
         if self.plot:
+            plt.figure(figsize=(8, 4))
+            plt.plot(self.losses, label="Train Loss")
+            plt.xlabel("Iteration")
+            plt.ylabel("Loss")
+            plt.title("Training Loss Over Time")
+            plt.grid(True)
+            plt.legend()
+            plt.show()
+            self.displayed_plot = True 
+            
+    def cleanup_fit(self, learn):
+        """Display loss plot if enabled even if training is interupted."""
+        if self.plot and not self.displayed_plot:
             plt.figure(figsize=(8, 4))
             plt.plot(self.losses, label="Train Loss")
             plt.xlabel("Iteration")

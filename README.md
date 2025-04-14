@@ -39,6 +39,29 @@ MiniLearn builds on these ideas and takes them further by creating a more comple
 
 ---
 
+## Gallery
+
+A few visual examples of MiniLearn's features in action:
+
+### Learning Rate Finder
+Automatically explores a range of learning rates and plots the corresponding losses
+
+![Learning Rate Finder](assets/LearningRateFinder.png)
+
+---
+
+### Training Loss Plot
+Plots training loss over time when enabled through the `ProgressCB` callback.
+
+![Training Loss Plot](assets/TrainingLossPlot.png)
+
+### Training Progress Bars
+Real-time feedback for training and validation using `tqdm`
+
+![Training Progress Bar](assets/ProgressBars.png)
+
+---
+
 ## Project Structure
 
 <pre>
@@ -84,7 +107,7 @@ pip install -r requirements.txt
 
 ## Example Notebook
 
-see `main.ipynb` for a step by step walkthrough of training a model with MiniLearn, using callbacks, metrics, hooks, and the learning rate finder.
+See `main.ipynb` for a step by step walkthrough of training a model with MiniLearn, using callbacks, metrics, hooks, and the learning rate finder.
 
 
 
